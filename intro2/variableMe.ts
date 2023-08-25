@@ -1,9 +1,12 @@
 let greetings:string = "Hello World";
 
-let my_num=6;
-
 greetings.toUpperCase();
-
 console.log(greetings)
+
+// number
+let userId:number=334455
+
+// boolean
+let isLoggedIn:boolean = false
 
 export {}
