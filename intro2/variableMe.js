@@ -7,3 +7,9 @@ console.log(greetings);
 var userId = 334455;
 // boolean
 var isLoggedIn = false;
+// any
+var hero;
+function getHero() {
+    return "batman";
+}
+hero = getHero();
