@@ -11,3 +11,7 @@ createUser(newUser);
 function createCourse() {
     return { name: "reactjs", price: 399 };
 }
+function createTypeUser(user) {
+    return user;
+}
+createTypeUser({ name: "hello", email: "hello@hello.com", isActive: true });
