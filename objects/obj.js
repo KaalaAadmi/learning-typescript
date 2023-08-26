@@ -15,3 +15,10 @@ function createTypeUser(user) {
     return user;
 }
 createTypeUser({ name: "hello", email: "hello@hello.com", isActive: true });
+var myUser = {
+    _id: "123",
+    name: "hello",
+    email: "h@h.com",
+    isActive: true,
+};
+myUser.isActive = false;
