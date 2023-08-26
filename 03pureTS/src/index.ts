@@ -72,3 +72,44 @@ class User3 {
 
 const arnav3 = new User3("a@a.com", "arnav");
 // arnav3.deleteToken(); // error
+
+// protected
+class User4 {
+	// private _courseCount = 1;
+	protected _courseCount = 1;
+	readonly city: string = "mumbai";
+	constructor(
+		public email: string,
+		public name: string // private userId:string,
+	) {}
+	get getAppleEmail(): string {
+		return `apple${this.email}`;
+	}
+
+	private deleteToken() {
+		console.log("token is deleted!");
+	}
+
+	// getters can have a return type
+	get courseCount(): number {
+		return this._courseCount;
+	}
+	// setter cannot have a return type
+	set courseCount(num: number) {
+		if (num <= 1) {
+			throw new Error("Course count should be more than 1");
+		}
+		this._courseCount = num;
+	}
+}
+
+class SubUser extends User4{
+  isFamily:boolean=true
+  changeCourseCount(){
+    this._courseCount+=1
+  }
+}
+// NOTES:-
+// public: can be accessed everywhere(inside other classes and outside classes)
+// private: can be accessed only inside the class where the variable or function is declared.
+// protected: can be accessed inside the class where the variable or function is declared and also inside the classes which extends the class where the variable or function is declared.
