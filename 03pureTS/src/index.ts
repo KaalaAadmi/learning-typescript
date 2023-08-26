@@ -35,9 +35,40 @@ class User2 {
 	readonly city: string = "mumbai";
 	constructor(
 		public email: string,
-		public name: string
-	) // private userId:string,
-	{}
+		public name: string // private userId:string,
+	) {}
 }
 
 const arnav1 = new User2("a@a.com", "arnav");
+
+// getters and setters
+class User3 {
+	private _courseCount = 1;
+	readonly city: string = "mumbai";
+	constructor(
+		public email: string,
+		public name: string // private userId:string,
+	) {}
+	get getAppleEmail(): string {
+		return `apple${this.email}`;
+	}
+
+	private deleteToken() {
+		console.log("token is deleted!");
+	}
+
+	// getters can have a return type
+	get courseCount(): number {
+		return this._courseCount;
+	}
+	// setter cannot have a return type
+	set courseCount(num: number) {
+		if (num <= 1) {
+			throw new Error("Course count should be more than 1");
+		}
+		this._courseCount = num;
+	}
+}
+
+const arnav3 = new User3("a@a.com", "arnav");
+// arnav3.deleteToken(); // error
