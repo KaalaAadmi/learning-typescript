@@ -15,13 +15,20 @@ function provideId(id) {
 }
 function printAll(strs) {
     if (strs) {
-        if (typeof strs === 'object') {
+        if (typeof strs === "object") {
             for (const s of strs) {
                 console.log(s);
             }
         }
-        else if (typeof strs === 'string') {
+        else if (typeof strs === "string") {
             console.log(strs);
         }
+    }
+}
+function isAdminAccount(account) {
+    // return account.isAdmin // error
+    if ("isAdmin" in account) {
+        console.log(account.isAdmin);
+        return account.isAdmin;
     }
 }
