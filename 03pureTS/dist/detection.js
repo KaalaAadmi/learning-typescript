@@ -57,3 +57,28 @@ function getFood(pet) {
         return "bird food";
     }
 }
+function getTrueShape(shape) {
+    if (shape.kind === "circle") {
+        return Math.PI * shape.radius ** 2;
+    }
+    else if (shape.kind === "square") {
+        return shape.side ** 2;
+    }
+    else if (shape.kind === "rectangle") {
+        return shape.length * shape.width;
+    }
+}
+function getArea(shape) {
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius ** 2;
+        case "square":
+            return shape.side ** 2;
+        case "rectangle":
+            return shape.length * shape.width;
+        // the default case should never be running, if it so happens that it has to get executed, then the shape type is not exhaustive, and the code will start screaming by giving squiggly lines. These lines are a great indicator for developers to understand that they are not doing an exhaustive check.
+        default:
+            const _defaultForShape = shape;
+            return _defaultForShape;
+    }
+}
