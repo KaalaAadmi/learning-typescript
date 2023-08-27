@@ -15,12 +15,26 @@ function identityThree<Type>(val: Type): Type {
 }
 
 function identityFour<T>(val: T): T {
-  return val;
+	return val;
 }
 
-interface Bottle{
-  brand:string,
-  type:number,
+interface Bottle {
+	brand: string;
+	type: number;
 }
 
-identityFour<Bottle>({brand:'abc',type:1})
+identityFour<Bottle>({ brand: "abc", type: 1 });
+
+// generics in array and arrow functions
+
+function getSearchProducts<T>(products: T[]): T {
+	// do some database operations
+	const myIndex = 3;
+	return products[myIndex];
+}
+// arrow function
+const getMoreProducts = <T>(products: T[]): T => {
+	// do some database operations
+	const myIndex = 4;
+	return products[myIndex];
+};

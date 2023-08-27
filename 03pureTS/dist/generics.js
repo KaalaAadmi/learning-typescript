@@ -15,4 +15,16 @@ function identityThree(val) {
 function identityFour(val) {
     return val;
 }
-identityFour({ brand: 'abc', type: 1 });
+identityFour({ brand: "abc", type: 1 });
+// generics in array and arrow functions
+function getSearchProducts(products) {
+    // do some database operations
+    const myIndex = 3;
+    return products[myIndex];
+}
+// arrow function
+const getMoreProducts = (products) => {
+    // do some database operations
+    const myIndex = 4;
+    return products[myIndex];
+};
