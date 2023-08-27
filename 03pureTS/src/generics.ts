@@ -38,3 +38,40 @@ const getMoreProducts = <T>(products: T[]): T => {
 	const myIndex = 4;
 	return products[myIndex];
 };
+
+// Generic classes
+interface Database {
+	connection: string;
+	username: string;
+	password: string;
+}
+function anotherFunction<T, U extends Database>(
+	valueOne: T,
+	valueTwo: U
+): object {
+	return {
+		valueOne,
+		valueTwo,
+	};
+}
+
+anotherFunction(3, { connection: "abc", username: "abc", password: "abc" });
+
+interface Quiz{
+  name:string,
+  type:string,
+}
+
+interface Course{
+  name:string,
+  author:string,
+  subject:string,
+}
+
+class Sellable<T,>{
+  public cart:T[]=[]
+
+  addToCart(product:T){
+    this.cart.push(product)
+  }
+}
