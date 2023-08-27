@@ -45,6 +45,7 @@ interface Database {
 	username: string;
 	password: string;
 }
+
 function anotherFunction<T, U extends Database>(
 	valueOne: T,
 	valueTwo: U
