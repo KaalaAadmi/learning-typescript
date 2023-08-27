@@ -79,11 +79,9 @@ class User4 {
     deleteToken() {
         console.log("token is deleted!");
     }
-    // getters can have a return type
     get courseCount() {
         return this._courseCount;
     }
-    // setter cannot have a return type
     set courseCount(num) {
         if (num <= 1) {
             throw new Error("Course count should be more than 1");
@@ -101,6 +99,8 @@ class SubUser extends User4 {
     }
 }
 // NOTES:-
+// getters can have a return type
+// setter cannot have a return type
 // public: can be accessed everywhere(inside other classes and outside classes)
 // private: can be accessed only inside the class where the variable or function is declared.
 // protected: can be accessed inside the class where the variable or function is declared and also inside the classes which extends the class where the variable or function is declared.
